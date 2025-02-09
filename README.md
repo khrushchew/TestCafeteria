@@ -130,8 +130,6 @@ python3 manage.py createsuperuser
 
 ## API
 
-## API
-
 Есть несколько роутов:
 
 - **/api/dishes/** — взаимодействие с блюдами
