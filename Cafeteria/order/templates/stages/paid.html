@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Оплаченные заказы{% endblock %}
+
+{% block find%}
+{% endblock %}
+
+
+{% block paid %}
+<li class="nav-item">
+    <a class="nav-link active" href="{% url 'paid' %}">Оплаченные заказы</a>
+</li>
+{% endblock %}
+
+
+{% block total %}
+<h1>Итого:</h1>
+<h3>{{ total }} руб. за все заказы</h3>
+{% for table in total_tables %}
+    <p>Стол {{table.table_number}}: Общая сумма = {{table.total_sum}} руб.</p>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Заказы в очереди{% endblock %}
+
+{% block find%}
+{% endblock %}
+
+{% block waiting%}
+<li class="nav-item">
+    <a class="nav-link active" href="{% url 'waiting' %}">Заказы в очереди</a>
+</li>
+{% endblock %}

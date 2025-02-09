@@ -1,10 +1,22 @@
 from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from order.views.list import ListOrderView
 
-router = DefaultRouter()
-router.register(r'orders', ListOrderView, 'order')
+from order.views.home import home
+
+from order.views.stages.waiting import waiting_view
+from order.views.stages.ready import ready_view
+from order.views.stages.paid import paid_view
+
+from order.views.crud.create import create_order
+from order.views.crud.detail import OrderDetailView
 
 urlpatterns = [
-    path('v1/', include(router.urls))
+    path('', home, name='home'),
+
+    path('waiting/', waiting_view, name='waiting'),
+    path('ready/', ready_view, name='ready'),
+    path('paid/', paid_view, name='paid'),
+
+    path('create/', create_order, name='create'),
+
+    path('detail/<int:pk>/', OrderDetailView.as_view(), name='detail'),
 ]

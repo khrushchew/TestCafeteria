@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Редактирование заказа{% endblock %}
+
+{% block find%}
+{% endblock %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h2 class="mb-4">Редактирование заказа #{{ order.pk }}</h2>
+
+    <!-- Форма для редактирования заказа -->
+    <div class="card shadow-sm mb-4">
+      <div class="card-body">
+        <h5 class="card-title">Изменить заказ</h5>
+        <form method="post">
+
+          {% csrf_token %}
+
+          <div class="form-group">
+            {{ form.as_p }}
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Кнопка для удаления заказа -->
+    <div class="card shadow-sm">
+      <div class="card-body text-center">
+        <h5 class="card-title text-danger">Удалить заказ</h5>
+        <form method="post" action="{% url 'detail' order.pk %}">
+
+          {% csrf_token %}
+
+          <button type="submit" name="delete" class="btn btn-danger">Удалить заказ</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <a href="{% url 'waiting' %}" class="btn btn-secondary">Перейти к списку заказов</a>
+    </div>
+  </div>
+{% endblock %}

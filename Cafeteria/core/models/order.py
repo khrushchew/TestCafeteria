@@ -6,7 +6,7 @@ class Order(models.Model):
 
     table_number = models.ForeignKey('Table', models.CASCADE, null=False, blank=False, verbose_name='Номер стола')
     items = models.ManyToManyField('Dish')
-    total_price = models.PositiveIntegerField(null=False, blank=False, default=0, editable=False, verbose_name='Общая стоимость')
+    total_price = models.PositiveIntegerField(null=False, blank=False, default=0, verbose_name='Общая стоимость')
     status = models.CharField(max_length=2, choices=status_list, default='W', verbose_name='Статус')
 
     class Meta:

@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'core',
+    'order',
+    'dish',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +60,7 @@ ROOT_URLCONF = 'Cafeteria.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'order' / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
