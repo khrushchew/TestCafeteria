@@ -166,4 +166,12 @@ python3 manage.py createsuperuser
 
 Столы и блюда поддерживают все возможные CRUD операции.
 
+## Тесты
+
+Написаны тесты для моделей и роутов, запустить их можно с помощью
+```bash
+python3 manage.py test order.tests
+python3 manage.py test core.tests 
+```
+
 Если будут вопросы, можно задать их по почте или в Telegram.
