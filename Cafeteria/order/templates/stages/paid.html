@@ -15,8 +15,14 @@
 
 {% block total %}
 <h1>Итого:</h1>
+{% if total %}
 <h3>{{ total }} руб. за все заказы</h3>
+{% else %}
+<h3>0 руб. за все заказы</h3>
+{% endif %}
+
 {% for table in total_tables %}
     <p>Стол {{table.table_number}}: Общая сумма = {{table.total_sum}} руб.</p>
 {% endfor %}
+
 {% endblock %}
